@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -13,14 +13,21 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Gulden | Band",
-  description: "Gulden transforms raw emotion into sonic landscapes — seamlessly blending rock, alternative, and experimental sounds.",
-  keywords: ["Gulden", "band", "music", "rock", "alternative", "concerts", "live music"],
+  title: "Gulden | Mid-oriental Funk",
+  description: "Gulden - Indonesian Mid-oriental Funk band. 11 lagu. 11 cerita. Album pertama yang memadukan keresahan dengan suara yang tak terbungkam.",
+  keywords: ["Gulden", "band", "music", "mid-oriental funk", "Indonesian band", "alternative", "funk"],
   openGraph: {
-    title: "Gulden | Band",
-    description: "Gulden transforms raw emotion into sonic landscapes — seamlessly blending rock, alternative, and experimental sounds.",
+    title: "Gulden | Mid-oriental Funk",
+    description: "Gulden - Indonesian Mid-oriental Funk band. 11 lagu. 11 cerita.",
     type: "website",
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#0a0a0a",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
 };
 
 export default function RootLayout({
@@ -30,10 +37,12 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="id"
       className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background`}
     >
-      <body className="min-h-screen flex flex-col text-foreground">{children}</body>
+      <body className="min-h-screen flex flex-col text-foreground overflow-x-hidden">
+        {children}
+      </body>
     </html>
   );
 }
