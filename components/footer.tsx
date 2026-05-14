@@ -9,37 +9,29 @@ export function Footer() {
           <div>
             <h3 className="font-bold text-sm mb-3">Gulden</h3>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Alternative Rock Band
+              Indonesian Alternative Band
               <br />
-              with Focus on Sound and Vision.
+              11 lagu. 11 cerita.
             </p>
           </div>
 
           {/* Contact */}
           <div>
             <Link
-              href="mailto:contact@gulden.band"
+              href="mailto:gulden.band@gmail.com"
               className="text-sm hover:text-accent transition-colors block"
             >
-              contact@gulden.band
-            </Link>
-            <Link
-              href="tel:+1234567890"
-              className="text-sm hover:text-accent transition-colors block mt-1"
-            >
-              +1 234 567 890
+              gulden.band@gmail.com
             </Link>
             <p className="text-sm text-muted-foreground mt-3">
-              Los Angeles, CA
-              <br />
-              United States
+              Indonesia
             </p>
           </div>
 
           {/* Social */}
           <div className="flex flex-col gap-1.5">
             <Link
-              href="https://instagram.com"
+              href="https://instagram.com/gulden.band"
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm hover:text-accent transition-colors"
@@ -47,7 +39,7 @@ export function Footer() {
               Instagram
             </Link>
             <Link
-              href="https://youtube.com"
+              href="https://youtube.com/@gulden"
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm hover:text-accent transition-colors"
@@ -55,7 +47,7 @@ export function Footer() {
               YouTube
             </Link>
             <Link
-              href="https://spotify.com"
+              href="https://open.spotify.com/artist/gulden"
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm hover:text-accent transition-colors"
@@ -63,7 +55,7 @@ export function Footer() {
               Spotify
             </Link>
             <Link
-              href="https://soundcloud.com"
+              href="https://soundcloud.com/gulden"
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm hover:text-accent transition-colors"
@@ -72,28 +64,23 @@ export function Footer() {
             </Link>
           </div>
 
-          {/* Legal */}
+          {/* Album */}
           <div className="flex flex-col gap-1.5">
+            <span className="text-sm font-medium mb-1">Album Pertama</span>
             <Link
-              href="#"
-              className="text-sm hover:text-accent transition-colors"
+              href="#music"
+              className="text-sm text-muted-foreground hover:text-accent transition-colors"
             >
-              Imprint
+              11 Tracks
             </Link>
             <Link
               href="#"
-              className="text-sm hover:text-accent transition-colors"
+              className="text-sm text-muted-foreground hover:text-accent transition-colors"
             >
-              Privacy Policy
-            </Link>
-            <Link
-              href="#"
-              className="text-sm hover:text-accent transition-colors"
-            >
-              Terms
+              Stream Now
             </Link>
             <span className="text-sm text-muted-foreground mt-2">
-              &copy; {new Date().getFullYear()}
+              &copy; {new Date().getFullYear()} Gulden
             </span>
           </div>
         </div>

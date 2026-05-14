@@ -15,32 +15,32 @@ interface Work {
 const works: Work[] = [
   {
     id: 1,
-    title: "Echoes of Gold",
-    subtitle: "Latest Album Release",
+    title: "Menjadi Aku",
+    subtitle: "Lead Single",
     image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=1920&h=1080&fit=crop",
   },
   {
     id: 2,
-    title: "Live at Paradiso",
-    subtitle: "Concert Film",
+    title: "Akal-akalan Semesta",
+    subtitle: "Album Track",
     image: "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=1920&h=1080&fit=crop",
   },
   {
     id: 3,
-    title: "Golden Hour Sessions",
-    subtitle: "Studio Recording",
+    title: "Elegi Pahit di Tepi Neraka",
+    subtitle: "Fan Favorite",
     image: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=1920&h=1080&fit=crop",
   },
   {
     id: 4,
-    title: "Summer Tour 2024",
-    subtitle: "World Tour Documentary",
+    title: "Mati Rasa",
+    subtitle: "Deep Cut",
     image: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=1920&h=1080&fit=crop",
   },
   {
     id: 5,
-    title: "Unplugged",
-    subtitle: "Acoustic Sessions",
+    title: "Pusara Badai",
+    subtitle: "Album Closer",
     image: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=1920&h=1080&fit=crop",
   },
 ];
