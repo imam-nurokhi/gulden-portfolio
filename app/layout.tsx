@@ -13,12 +13,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Gulden | Mid-oriental Funk",
-  description: "Gulden - Indonesian Mid-oriental Funk band. 11 lagu. 11 cerita. Album pertama yang memadukan keresahan dengan suara yang tak terbungkam.",
-  keywords: ["Gulden", "band", "music", "mid-oriental funk", "Indonesian band", "alternative", "funk"],
+  title: "Gulden | Mid-east Oriental Funk",
+  description: "Gulden - Indonesian Mid-east Oriental Funk band. 11 lagu. 11 cerita. Album pertama yang memadukan keresahan dengan suara yang tak terbungkam.",
+  keywords: ["Gulden", "band", "music", "mid-east oriental funk", "Indonesian band", "alternative", "funk"],
   openGraph: {
-    title: "Gulden | Mid-oriental Funk",
-    description: "Gulden - Indonesian Mid-oriental Funk band. 11 lagu. 11 cerita.",
+    title: "Gulden | Mid-east Oriental Funk",
+    description: "Gulden - Indonesian Mid-east Oriental Funk band. 11 lagu. 11 cerita.",
     type: "website",
   },
 };

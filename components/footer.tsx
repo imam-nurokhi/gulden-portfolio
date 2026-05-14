@@ -44,7 +44,7 @@ export function Footer() {
                 </h3>
               </Link>
               <p className="text-sm text-muted-foreground leading-relaxed max-w-sm mb-6">
-                Indonesian Mid-oriental Funk band. 11 lagu, 11 cerita — dari keresahan lahir suara yang tak terbungkam.
+                Indonesian Mid-east Oriental Funk band. 11 lagu, 11 cerita — dari keresahan lahir suara yang tak terbungkam.
               </p>
               <Link
                 href="mailto:gulden.band@gmail.com"
@@ -114,7 +114,7 @@ export function Footer() {
               &copy; {new Date().getFullYear()} Gulden. All rights reserved.
             </p>
             <p className="text-xs text-muted-foreground">
-              Mid-oriental Funk from Indonesia
+              Mid-east Oriental Funk from Indonesia
             </p>
           </motion.div>
         </div>
