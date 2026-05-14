@@ -5,7 +5,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ChevronDown } from "lucide-react";
+import { Play, ChevronDown } from "lucide-react";
 
 interface Work {
   id: number;
@@ -98,11 +98,12 @@ export function HeroSlider() {
                   transform: selectedIndex === index ? "scale(1)" : "scale(1.05)",
                 }}
               />
-              {/* Gradient Overlays */}
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
-              <div className="absolute inset-0 bg-gradient-to-r from-background/50 via-transparent to-transparent" />
+              {/* Premium Gradient Overlays */}
+              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-background/10" />
+              <div className="absolute inset-0 bg-gradient-to-r from-background/60 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-transparent to-transparent" />
 
-              {/* Content */}
+              {/* Content - Repositioned for mobile */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{
@@ -110,14 +111,46 @@ export function HeroSlider() {
                   y: selectedIndex === index ? 0 : 30,
                 }}
                 transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                className="absolute bottom-24 md:bottom-28 left-4 md:left-8 right-4 md:right-8"
+                className="absolute bottom-40 md:bottom-32 left-5 md:left-10 right-5 md:right-auto max-w-2xl"
               >
-                <p className="text-xs md:text-sm uppercase tracking-[0.3em] text-accent font-medium mb-2 md:mb-3">
+                {/* Track Number Badge - Premium Mobile */}
+                <motion.div 
+                  className="flex items-center gap-3 mb-4"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: selectedIndex === index ? 1 : 0, x: selectedIndex === index ? 0 : -20 }}
+                  transition={{ delay: 0.2, duration: 0.6 }}
+                >
+                  <span className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-accent/50 flex items-center justify-center backdrop-blur-sm bg-accent/10">
+                    <Play className="w-4 h-4 md:w-5 md:h-5 text-accent fill-accent" />
+                  </span>
+                  <div className="h-px w-8 md:w-12 bg-gradient-to-r from-accent to-transparent" />
+                </motion.div>
+
+                <p className="text-[10px] md:text-xs uppercase tracking-[0.3em] text-accent font-semibold mb-2 md:mb-3">
                   {work.subtitle}
                 </p>
-                <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight leading-[1.1]">
+                <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-[1.1]">
                   {work.title}
                 </h2>
+
+                {/* Track Progress - Premium Detail */}
+                <div className="mt-4 md:mt-6 flex items-center gap-3">
+                  <span className="text-xs font-mono text-white/50">
+                    {String(selectedIndex + 1).padStart(2, "0")}
+                  </span>
+                  <div className="h-[2px] w-16 md:w-24 bg-white/20 rounded-full overflow-hidden">
+                    <motion.div
+                      className="h-full bg-accent"
+                      initial={{ width: "0%" }}
+                      animate={{ width: "100%" }}
+                      transition={{ duration: 5, ease: "linear" }}
+                      key={selectedIndex}
+                    />
+                  </div>
+                  <span className="text-xs font-mono text-white/50">
+                    {String(works.length).padStart(2, "0")}
+                  </span>
+                </div>
               </motion.div>
             </div>
           ))}
@@ -125,7 +158,7 @@ export function HeroSlider() {
       </div>
 
       {/* Side Track List - Desktop Only */}
-      <div className="hidden lg:flex absolute right-8 top-1/2 -translate-y-1/2 flex-col gap-3 z-20">
+      <div className="hidden lg:flex absolute right-10 top-1/2 -translate-y-1/2 flex-col gap-3 z-20">
         {works.map((work, index) => (
           <button
             key={work.id}
@@ -150,59 +183,49 @@ export function HeroSlider() {
         ))}
       </div>
 
-      {/* Bottom Bar */}
-      <div className="absolute bottom-0 left-0 right-0 z-20 px-4 md:px-8 pb-6 md:pb-8">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-          {/* Genre Badge */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.5, duration: 0.6 }}
-            className="px-4 py-2 rounded-full border border-white/20 backdrop-blur-sm"
-          >
-            <span className="text-xs font-semibold uppercase tracking-wider text-white/80">
-              Mid-oriental Funk
-            </span>
-          </motion.div>
-
-          {/* Pagination Dots */}
-          <div className="flex gap-2">
-            {works.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => scrollTo(index)}
-                className="group p-1"
-                aria-label={`Go to slide ${index + 1}`}
-              >
-                <span
-                  className={`block h-1 rounded-full transition-all duration-500 ${
-                    index === selectedIndex
-                      ? "bg-accent w-8"
-                      : "bg-white/30 w-2 group-hover:bg-white/50 group-hover:w-3"
-                  }`}
-                />
-              </button>
-            ))}
-          </div>
-
-          {/* Scroll Indicator */}
-          <motion.button
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.5, duration: 0.6 }}
-            onClick={scrollToContent}
-            className="flex items-center gap-2 text-white/60 hover:text-white transition-colors group"
-          >
-            <span className="text-xs uppercase tracking-wider hidden md:inline">Scroll</span>
-            <motion.div
-              animate={{ y: [0, 4, 0] }}
-              transition={{ repeat: Infinity, duration: 1.5 }}
+      {/* Bottom Bar - Redesigned for Mobile */}
+      <div className="absolute bottom-0 left-0 right-0 z-20">
+        {/* Pagination Dots - Center */}
+        <div className="flex justify-center gap-2 mb-4 md:mb-6">
+          {works.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => scrollTo(index)}
+              className="group p-1.5"
+              aria-label={`Go to slide ${index + 1}`}
             >
-              <ChevronDown className="w-4 h-4" />
-            </motion.div>
-          </motion.button>
+              <span
+                className={`block h-1.5 rounded-full transition-all duration-500 ${
+                  index === selectedIndex
+                    ? "bg-accent w-8"
+                    : "bg-white/30 w-1.5 group-hover:bg-white/50 group-hover:w-2"
+                }`}
+              />
+            </button>
+          ))}
         </div>
+
+        {/* Scroll Indicator - Bottom Center */}
+        <motion.button
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.8, duration: 0.6 }}
+          onClick={scrollToContent}
+          className="flex flex-col items-center gap-1 mx-auto pb-6 text-white/50 hover:text-white transition-colors group"
+        >
+          <span className="text-[10px] uppercase tracking-[0.2em] font-medium">Scroll</span>
+          <motion.div
+            animate={{ y: [0, 4, 0] }}
+            transition={{ repeat: Infinity, duration: 1.5 }}
+          >
+            <ChevronDown className="w-4 h-4" />
+          </motion.div>
+        </motion.button>
       </div>
+
+      {/* Decorative Corner Elements - Premium */}
+      <div className="absolute top-20 left-5 md:left-10 w-16 h-16 md:w-24 md:h-24 border-l border-t border-white/10 pointer-events-none" />
+      <div className="absolute top-20 right-5 md:right-10 w-16 h-16 md:w-24 md:h-24 border-r border-t border-white/10 pointer-events-none" />
     </section>
   );
 }

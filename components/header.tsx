@@ -197,7 +197,7 @@ export function Header() {
                       Genre
                     </p>
                     <p className="text-lg md:text-xl font-semibold text-gradient">
-                      Mid-oriental Funk
+                      Mid-east Oriental Funk
                     </p>
                   </div>
                   <div className="flex flex-wrap gap-4 md:gap-6">

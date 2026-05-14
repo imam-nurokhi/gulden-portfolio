@@ -36,7 +36,7 @@ export function IntroSection() {
             Dari keresahan menjadi aku hingga pusara badai — perjalanan emosi yang tak terduga
             dalam balutan{" "}
           </span>
-          <span className="text-gradient font-semibold">Mid-oriental Funk</span>
+          <span className="text-gradient font-semibold">Mid-east Oriental Funk</span>
           <span className="text-muted-foreground">.</span>
         </motion.p>
 

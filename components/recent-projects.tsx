@@ -98,7 +98,7 @@ export function RecentProjects() {
                   Gulden
                 </h3>
                 <p className="text-sm text-white/70">
-                  Mid-oriental Funk
+                  Mid-east Oriental Funk
                 </p>
               </div>
 
